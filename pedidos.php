@@ -144,13 +144,9 @@ $totalPagina = ceil($numTotal / $quantidade);
                                                     <td class="actions-hover actions-fade btn-group ">
                                                         <a class="btn btn-default text-center" title="Adicionar Produtos" href="pedido_itens_adiciona.php?idpedido=<?php echo $rows_rspedidos['idpedido'] ?>"><i class="fas fa-plus"></i></a>
                                                         <a class="btn btn-dark text-white text-center" title="Verificar Pedido" href="pedido_itens.php?idpedido=<?php echo $rows_rspedidos['idpedido'] ?>"><i class="fas fa-pencil-alt"></i></a>
-                                                        <?php if ($rows_rspedidos['valor'] > 0 ) {
-                                                            
-
-                                                        }else{  ?>
-                                                             
-                                                        <a class="btn btn-danger text-white text-center" title="Excluir Pedido" href="pedido_excluir.php?idpedido=<?php echo $rows_rspedidos['idpedido'] ?>&idcomanda=<?php echo $rows_rspedidos['comanda'] ?>"><i class="far fa-trash-alt"></i></a>
-                                                        <?php } ?> 
+                                                        <?php if ($_SESSION['permissao'] == 1  or $_SESSION['permissao'] == 4 or $_SESSION['permissao'] == 3) { ?>
+                                                            <a class="btn btn-danger text-white text-center" title="Excluir Pedido" href="pedido_excluir.php?idpedido=<?php echo $rows_rspedidos['idpedido'] ?>&idcomanda=<?php echo $rows_rspedidos['comanda'] ?>"><i class="far fa-trash-alt"></i></a>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php  }
