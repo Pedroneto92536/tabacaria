@@ -97,7 +97,9 @@ if ($_SESSION['logado'] == md5('@wew67434$%#@@947@@#$@@!#54798#11a23@@dsa@!')) {
                                                 <div class="widget-summary">
                                                     <div class="widget-summary-col widget-summary-col-icon">
                                                         <div class="summary-icon bg-tertiary">
-                                                            <i class="fas fa-cash-register"></i>
+                                                            <a href="pedidos.php">
+                                                                <i class="fas fa-cash-register"></i>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                     <div class="widget-summary-col">
