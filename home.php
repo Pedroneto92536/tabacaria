@@ -183,6 +183,82 @@ if ($_SESSION['logado'] == md5('@wew67434$%#@@947@@#$@@!#54798#11a23@@dsa@!')) {
                     if ($_SESSION['permissao'] == 1 or $_SESSION['permissao'] == 2 or $_SESSION['permissao'] == 4) { ?>
                         <div class="row">
                             <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <section class="card card-featured-left card-featured-tertiary mb-3">
+                                            <div class="card-body">
+                                                <div class="widget-summary">
+                                                    <div class="widget-summary-col widget-summary-col-icon">
+                                                        <div class="summary-icon bg-tertiary">
+                                                            <i class="fas fa-cash-register"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="widget-summary-col">
+                                                        <div class="summary">
+                                                            <?php
+                                                            $sql = "SELECT ifnull(count(*),0) as total FROM tbpedidos c WHERE c.status = 'A';";
+                                                            $rsvendaab = mysqli_query($conexao, $sql);
+                                                            $result = mysqli_fetch_array($rsvendaab);
+                                                            $rsvendasaberta = $result['total'];
+
+                                                            $sql = "SELECT ifnull(count(*),0) as total FROM tbpedidos c WHERE DAY(c.data_inc) = Day(now());";
+                                                            $rsvendahj = mysqli_query($conexao, $sql);
+                                                            $result = mysqli_fetch_array($rsvendahj);
+                                                            $rsvendashoje = $result['total'];
+                                                            ?>
+                                                            <h4 class="title">Vendas Abertas</h4>
+                                                            <div class="info">
+                                                                <strong class="amount"><?php echo $rsvendasaberta ?></strong>
+                                                            </div><br>
+                                                            <h4 class="title">Vendas de Hoje</h4>
+                                                            <div class="info">
+                                                                <strong class="amount"><?php echo $rsvendashoje ?></strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="col-xl-6 mb-4">
+                                        <section class="card card-featured-left card-featured-quaternary">
+                                            <div class="card-body">
+                                                <div class="widget-summary">
+                                                    <div class="widget-summary-col widget-summary-col-icon">
+                                                        <div class="summary-icon bg-quaternary">
+                                                            <i class="fas fa-user"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="widget-summary-col">
+                                                        <div class="summary">
+                                                            <?php
+                                                            $sql = "SELECT ifnull(count(*),0) as total FROM tbclientes a WHERE MONTH(a.data_cadastro) = Month(now());";
+                                                            $rsclimes = mysqli_query($conexao, $sql);
+                                                            $result = mysqli_fetch_array($rsclimes);
+                                                            $rstotclimes = $result['total'];
+                                                            ?>
+                                                            <h4 class="title">Cadastros no Mês</h4>
+                                                            <div class="info">
+                                                                <strong class="amount"><?php echo $rstotclimes ?></strong>
+                                                            </div><br>
+
+                                                            <?php
+                                                            $sql = "SELECT ifnull(count(*),0) as total FROM tbclientes ";
+                                                            $rsclitot = mysqli_query($conexao, $sql);
+                                                            $result = mysqli_fetch_array($rsclitot);
+                                                            $rstotcli = $result['total'];
+                                                            ?>
+                                                            <h4 class="title">Total Clientes Cadastrados</h4>
+                                                            <div class="info">
+                                                                <strong class="amount"><?php echo $rstotcli ?></strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
                                 <div class="row mb-3">
                                     <div class="col-xl-6">
                                         <section class="card card-featured-left card-featured-danger mb-3">
@@ -251,73 +327,7 @@ if ($_SESSION['logado'] == md5('@wew67434$%#@@947@@#$@@!#54798#11a23@@dsa@!')) {
                                         </section>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-xl-6">
-                                        <section class="card card-featured-left card-featured-tertiary mb-3">
-                                            <div class="card-body">
-                                                <div class="widget-summary">
-                                                    <div class="widget-summary-col widget-summary-col-icon">
-                                                        <div class="summary-icon bg-tertiary">
-                                                            <i class="fas fa-shopping-cart"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="widget-summary-col">
-                                                        <div class="summary">
-                                                            <?php
-                                                            $sql = "SELECT ifnull(count(*),0) as total FROM tbpedidos c WHERE DAY(c.data_finaliza) = Day(now()) and c.status = 'F';";
-                                                            $rsvendahj = mysqli_query($conexao, $sql);
-                                                            $result = mysqli_fetch_array($rsvendahj);
-                                                            $rsvendashoje = $result['total'];
-                                                            ?>
-                                                            <h4 class="title">Vendas de Hoje</h4>
-                                                            <div class="info">
-                                                                <strong class="amount"><?php echo $rsvendashoje ?></strong>
-                                                            </div>
-                                                        </div><br><br>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                    <div class="col-xl-6 mb-4">
-                                        <section class="card card-featured-left card-featured-quaternary">
-                                            <div class="card-body">
-                                                <div class="widget-summary">
-                                                    <div class="widget-summary-col widget-summary-col-icon">
-                                                        <div class="summary-icon bg-quaternary">
-                                                            <i class="fas fa-user"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="widget-summary-col">
-                                                        <div class="summary">
-                                                            <?php
-                                                            $sql = "SELECT ifnull(count(*),0) as total FROM tbclientes a WHERE MONTH(a.data_cadastro) = Month(now());";
-                                                            $rsclimes = mysqli_query($conexao, $sql);
-                                                            $result = mysqli_fetch_array($rsclimes);
-                                                            $rstotclimes = $result['total'];
-                                                            ?>
-                                                            <h4 class="title">Cadastros no Mês</h4>
-                                                            <div class="info">
-                                                                <strong class="amount"><?php echo $rstotclimes ?></strong>
-                                                            </div><br>
 
-                                                            <?php
-                                                            $sql = "SELECT ifnull(count(*),0) as total FROM tbclientes ";
-                                                            $rsclitot = mysqli_query($conexao, $sql);
-                                                            $result = mysqli_fetch_array($rsclitot);
-                                                            $rstotcli = $result['total'];
-                                                            ?>
-                                                            <h4 class="title">Total Clientes Cadastrados</h4>
-                                                            <div class="info">
-                                                                <strong class="amount"><?php echo $rstotcli ?></strong>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 

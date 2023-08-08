@@ -20,6 +20,24 @@ include("valida.php");
 
                     <li class="nav-parent nav-expanded ">
                         <a href="#">
+                            <i class="fas fa-store"></i>
+                            <span>Pedidos</span>
+                        </a>
+                        <ul class="nav nav-children">
+                            <li>
+                                <a href="pedidos.php">
+                                    <i class="fas fa-receipt"></i>
+                                    Vendas
+                                </a>
+                            </li>
+
+                            <!-- adicionar mais -->
+                        </ul>
+                    </li>
+                    <!-- Fim menu Pedidos -->
+
+                    <li class="nav-parent nav-expanded ">
+                        <a href="#">
                             <i class="fas fa-user-alt "></i>
                             <span>Cadastros</span>
                         </a>
