@@ -63,120 +63,27 @@ if ($_SESSION['logado'] == md5('@wew67434$%#@@947@@#$@@!#54798#11a23@@dsa@!')) {
                                 </li>
                                 <li><span>Dashboard</span></li>
                             </ol>
-
                         </div>
 
                         <h2>Painel Geral</h2>
                     </header>
 
-                    <!-- start: page -->
-                    <div class="row">
-                        <div class="col-xl-12 order-1 mb-4">
-                            <section class="card">
-                                <div class="text-left">
-                                    <?php if ($row_caixa['status'] == "A") {  ?>
-                                        <?php if ($_SESSION['permissao'] == 1  or $_SESSION['permissao'] == 4 or $_SESSION['permissao'] == 3) { ?>
-                                            <a class="btn btn-dark text-white" href="escolhe_venda.php" style="border:none;"><i class="fas fa-plus"></i> Novo Pedido</a>
-                                            <a class="btn btn-danger text-white" href="pedidos_finalizados.php" style="border:none;"><i class="fas fa-check-circle"></i> Pedidos Finalizados</a>
-                                        <?php } ?>
-                                    <?php } else { ?>
-                                        <div class="alert alert-danger">
-                                            <strong>
-                                                <h2>O Caixa está Fechado <i class="fas fa-lock"></i>. Abra o Caixa para iniciar uma Nova Venda. </h2>
-                                            </strong><br>
-                                        </div>
-                                    <?php } ?>
-                                </div>
-                                <header class="card-header card-header-transparent">
-                                    <h2 class="card-title">Últimos Pedidos</h2>
-                                </header>
-                                <div class="card-body">
-                                    <div class="col-lg-12">
-                                        <div class="center">
-                                            <?php
-                                            if (isset($_SESSION['status_pedido'])) :
-                                            ?>
-                                                <div class="alert alert-success">
-                                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                                    <strong>Sucesso! <?php echo $_SESSION['status_pedido'] ?> </strong><br>
-                                                </div>
-                                            <?php
-                                            endif;
-                                            unset($_SESSION['status_pedido']);
-                                            ?>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="center">
-                                            <?php
-                                            if (isset($_SESSION['msg_erro_pedido'])) :
-                                            ?>
-                                                <div class="alert alert-danger">
-                                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                                    <strong>Atenção! <?php echo $_SESSION['msg_erro_pedido'] ?></strong>
-                                                </div>
-                                            <?php
-                                            endif;
-                                            unset($_SESSION['msg_erro_pedido']);
-                                            ?>
-                                        </div>
-                                    </div>
-                                    <table class="table table-responsive-md table-striped mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-left d-none d-sm-table-cell">Pedido</th>
-                                                <th>Comanda</th>
-                                                <th>Nome</th>
-                                                <th>Status</th>
-                                                <th class="d-none d-sm-table-cell">Título</th>
-                                                <th>Hora</th>
-                                                <th>Valor</th>
-                                                <th class="">Ações</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            $sql = "SELECT a.*, c.nome,date_format(data_inc, '%H:%i') AS hora FROM tbpedidos a,tbclientes c where c.reg = a.reg and a.status = 'A' order by a.idpedido desc; ";
-                                            $result = mysqli_query($conexao, $sql);
-                                            ?>
-
-                                            <?php while ($rows_rspedidos = mysqli_fetch_array($result)) { ?>
-                                                <tr style="font-size:14px;">
-                                                    <td class="d-none d-sm-table-cell"><?php echo $rows_rspedidos['idpedido']; ?></td>
-                                                    <td><?php echo $rows_rspedidos['comanda'] ?></td>
-                                                    <td><?php echo $rows_rspedidos['nome'] ?></td>
-                                                    <td>
-                                                        <?php if ($rows_rspedidos['status'] == 'A') { ?>
-                                                            <span class="badge badge-info">Aberto</span>
-                                                        <?php } ?>
-                                                        <?php if ($rows_rspedidos['status'] == 'F') { ?>
-                                                            <span class="badge badge-success">Finalizado</span>
-                                                        <?php } ?>
-                                                    </td>
-                                            
-                                                    <td class="d-none d-sm-table-cell"><?php echo $rows_rspedidos['titulo'] ?></td>
-                                                    <td><?php echo $rows_rspedidos['hora'] ?></td>
-                                                    <td>R$ <?php echo number_format($rows_rspedidos['valor'], 2, ",", "."); ?></td>
-                                                    <td class="actions-hover actions-fade btn-group ">
-                                                        <a class="btn btn-default text-center" title="Adicionar Produtos" href="pedido_itens_adiciona.php?idpedido=<?php echo $rows_rspedidos['idpedido'] ?>"><i class="fas fa-plus"></i></a>
-                                                        <a class="btn btn-dark text-white text-center" title="Verificar Pedido" href="pedido_itens.php?idpedido=<?php echo $rows_rspedidos['idpedido'] ?>"><i class="fas fa-pencil-alt"></i></a>
-                                                        <?php if ($rows_rspedidos['valor'] > 0 ) {
-                                                            
-
-                                                        }else{  ?>
-                                                             
-                                                        <a class="btn btn-danger text-white text-center" title="Excluir Pedido" href="pedido_excluir.php?idpedido=<?php echo $rows_rspedidos['idpedido'] ?>&idcomanda=<?php echo $rows_rspedidos['comanda'] ?>"><i class="far fa-trash-alt"></i></a>
-                                                        <?php } ?> 
-                                                    </td>
-                                                </tr>
-                                            <?php  }
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </section>
-                        </div>
+                    <div class="text-left">
+                        <?php if ($row_caixa['status'] == "A") {  ?>
+                                <!-- <?php if ($_SESSION['permissao'] == 1  or $_SESSION['permissao'] == 4 or $_SESSION['permissao'] == 3) { ?>
+                                <a class="btn btn-dark text-white" href="escolhe_venda.php" style="border:none;"><i class="fas fa-plus"></i> Novo Pedido</a>
+                                <a class="btn btn-danger text-white" href="pedidos_finalizados.php" style="border:none;"><i class="fas fa-check-circle"></i> Pedidos Finalizados</a>
+                            <?php } ?> -->
+                            <?php } else { ?>
+                            <div class="alert alert-danger">
+                                <strong>
+                                    <h2>O Caixa está Fechado <i class="fas fa-lock"></i>. Abra o Caixa para iniciar uma Nova Venda. </h2>
+                                </strong><br>
+                            </div>
+                        <?php } ?>
                     </div>
+                    
+                    <!-- start: page -->
 
                     <?php
 
