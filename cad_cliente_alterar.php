@@ -140,9 +140,9 @@ $row_cli = mysqli_fetch_array($rscli);
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-lg-3 control-label text-lg-right pt-2">RG</label>
+                                        <label class="col-lg-3 control-label text-lg-right pt-2">CPF</label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="rg" class="form-control" value="<?php echo $row_cli['rg'] ?>" readonly required>
+                                            <input type="text" name="CPF" class="form-control" value="<?php echo $row_cli['cpf'] ?>" readonly required>
                                         </div>
                                     </div>
 

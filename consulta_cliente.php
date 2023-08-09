@@ -108,9 +108,9 @@ include("Connections/conexao.php");
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <label>RG</label>
+                                                <label>CPF</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control col-md-8" inputmode="numeric" name="buscarrg" id="buscarrg" placeholder="RG...">
+                                                    <input type="text" class="form-control col-md-11" inputmode="numeric" name="buscarrg" id="buscarrg" placeholder="CPF...">
                                                     <span class="input-group-append">
                                                         <button class="btn btn-danger" type="submit"><i class="fas fa-search"></i></button>
                                                     </span>
@@ -251,12 +251,12 @@ include("Connections/conexao.php");
     </script>
 
     <script type="text/javascript">
-        function buscarRg(rg) {
+        function buscarRg(cpf) {
             $.ajax({
                 url: "pesquisa_cliente.php",
                 method: "POST",
                 data: {
-                    rg: rg
+                    cpf: cpf
                 },
                 success: function(data) {
                     $('#resultado').html(data);
@@ -268,9 +268,9 @@ include("Connections/conexao.php");
         $(document).ready(function() {
             buscarRg();
             $('#buscarrg').keyup(function() {
-                var rg = $(this).val();
-                if (rg != '') {
-                    buscarRg(rg);
+                var cpf = $(this).val();
+                if (cpf != '') {
+                    buscarRg(cpf);
                 } else {
                     buscarRg();
                 }

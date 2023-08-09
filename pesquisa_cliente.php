@@ -4,9 +4,9 @@ include("Connections/conexao.php");
 if (isset($_POST["nome"])) {
 	$busca = $_POST["nome"];
 	$query = "SELECT *,date_format(data_cadastro, '%d/%m/%Y') AS data_cadastro FROM tbclientes where nome like '".$busca."%' order by nome asc;";
-}elseif (isset($_POST["rg"])) {
-	$buscarg = $_POST["rg"];
-	$query = "SELECT *,date_format(data_cadastro, '%d/%m/%Y') AS data_cadastro FROM tbclientes where rg like '".$buscarg."%' order by nome asc;";
+}elseif (isset($_POST["cpf"])) {
+	$buscarg = $_POST["cpf"];
+	$query = "SELECT *,date_format(data_cadastro, '%d/%m/%Y') AS data_cadastro FROM tbclientes where cpf like '".$buscarg."%' order by nome asc;";
 }else {
 	$query = "select * from tbclientes order by nome limit 10";
 }
@@ -19,7 +19,7 @@ if ($row > 0) {
                 <table class="table table-responsive-md table-hover mb-0" ">
                     <tr>
                         <th>Nome</th>
-                        <th>RG</th>
+                        <th>CPF</th>
                         <th class="d-none d-sm-table-cell">Telefone</th>
                         <th class="text-left">Data de Nascimento</th>
                         <th>Ações</th>
@@ -29,7 +29,7 @@ if ($row > 0) {
 		$data .= '
 			<tr>
                 <td>'.$row["nome"].'</td>
-                <td>'.$row["rg"]. '</td>
+                <td>'.$row["cpf"]. '</td>
                 <td class="d-none d-sm-table-cell">'.$row["telefone"].'</td>
                 <td class="text-left">'.$row["dt_nascimento"]. '</td>
                 <td class="actions-hover actions-fade">
