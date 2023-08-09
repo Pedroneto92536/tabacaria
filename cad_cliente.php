@@ -142,9 +142,9 @@ session_start();
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-lg-3 control-label text-lg-right pt-2">RG</label>
-                                        <div class="col-lg-6">
-                                            <input type="text" name="rg" inputmode="numeric" autocomplete="off" class="form-control" required>
+                                        <label class="col-lg-3 control-label text-lg-right pt-2">CPF</label>
+                                        <div class="col-lg-5">
+                                            <input type="text" name="cpf" inputmode="numeric" autocomplete="off" class="form-control" required>
                                         </div>
                                     </div>
 

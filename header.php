@@ -15,7 +15,7 @@ include("valida.php");
         <div id="userbox" class="userbox">
             <a href="#" data-toggle="dropdown">
                 <figure class="profile-picture">
-                    <img src="img/user.jpg" class="rounded-circle" data-lock-picture="img/user.jpg" />
+                    <img src="img/favicon-32x32.png" class="rounded-circle" data-lock-picture="img/user.jpg" />
                 </figure>
                 <div class="profile-info">
                     <span class="name"><?php echo $_SESSION['nome']; ?></span>
