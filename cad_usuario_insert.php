@@ -7,12 +7,12 @@ $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
 $email = mysqli_real_escape_string($conexao, trim($_POST['email']));
 $senha = mysqli_real_escape_string($conexao, trim(md5($_POST['senha'])));
 $senha_confirma = mysqli_real_escape_string($conexao, trim(md5($_POST['senha_confirma'])));
-$rg = mysqli_real_escape_string($conexao, trim($_POST['rg']));
+$cpf = mysqli_real_escape_string($conexao, trim($_POST['cpf']));
 $dtnascimento = mysqli_real_escape_string($conexao, $_POST['dtnascimento']);
 $telefone = mysqli_real_escape_string($conexao, $_POST['telefone']);
 $permissao = mysqli_real_escape_string($conexao, $_POST['permissao']);
 
-$sql = "select count(*) as total from usuarios where rg = '$rg' or email = '$email' ";
+$sql = "select count(*) as total from usuarios where cpf = '$cpf' or email = '$email' ";
 $result = mysqli_query($conexao, $sql);
 $row = mysqli_fetch_assoc($result);
 
@@ -34,7 +34,7 @@ if ($row['total'] >= 1) {
 }else{
 
 
-$sql = "INSERT INTO usuarios (nome, email, senha, senha_confirma, rg, telefone, dt_nascimento, criado, idpermissao) values ('$nome', '$email', '$senha', '$senha_confirma', '$rg', '$telefone', '$dtnascimento', NOW(), '$permissao')";
+$sql = "INSERT INTO usuarios (nome, email, senha, senha_confirma, cpf, telefone, dt_nascimento, criado, idpermissao) values ('$nome', '$email', '$senha', '$senha_confirma', '$cpf', '$telefone', '$dtnascimento', NOW(), '$permissao')";
 
 if($conexao->query($sql) === TRUE){
 	$_SESSION['status_cad_usuario'] = "Cadastro Realizado com Sucesso!";

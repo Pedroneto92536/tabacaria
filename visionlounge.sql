@@ -78,7 +78,7 @@ INSERT INTO `tbcategorias` (`idcategoria`, `nome`, `habilitado`, `modificado`) V
 CREATE TABLE IF NOT EXISTS `tbclientes` (
   `reg` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
-  `rg` varchar(20) NOT NULL,
+  `cpf` varchar(20) NOT NULL,
   `telefone` varchar(15) NOT NULL,
   `dt_nascimento` varchar(10) NOT NULL,
   `data_cadastro` datetime NOT NULL,
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `tbclientes` (
 --
 
 INSERT INTO `tbclientes` (`reg`, `nome`, `rg`, `telefone`, `dt_nascimento`, `data_cadastro`, `modificado`, `usuid`, `habilitado`) VALUES
-(99, 'Cliente Padrão', '9999', '(43) 99999-9999', '99/99/9999', '2020-01-16 17:20:00', NULL, NULL, 'S');
+(99, 'Cliente Padrão', '99999999999', '(43) 99999-9999', '99/99/9999', '2020-01-16 17:20:00', NULL, NULL, 'S');
 
 -- --------------------------------------------------------
 

@@ -142,9 +142,17 @@ session_start();
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-lg-3 control-label text-lg-right pt-2">RG</label>
+                                        <label class="col-lg-3 control-label text-lg-right pt-2">CPF</label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="rg" inputmode="numeric" autocomplete="off" class="form-control" required>
+                                            <div class="input-group">
+                                                <span class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <i class="fas fad fa-wallet" style="--fa-primary-color: #000000; --fa-secondary-color: #000000;"></i>
+                                                    </span>
+                                                </span>
+                                            
+                                                <input type="text" name="cpf" inputmode="numeric" autocomplete="off" class="form-control" required>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -248,7 +256,7 @@ session_start();
         (function(i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
+                (i[r].q = i[r].q || []).push(acpfuments)
             }, i[r].l = 1 * new Date();
             a = s.createElement(o), m = s.getElementsByTagName(o)[0];
             a.async = 1;
