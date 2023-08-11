@@ -9,7 +9,7 @@ $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
 $email = mysqli_real_escape_string($conexao, trim($_POST['email']));
 $senha = mysqli_real_escape_string($conexao, trim(md5($_POST['senha'])));
 $senha_confirma = mysqli_real_escape_string($conexao, trim(md5($_POST['senha_confirma'])));
-$rg = mysqli_real_escape_string($conexao, trim($_POST['rg']));
+$cpf = mysqli_real_escape_string($conexao, trim($_POST['cpf']));
 $dtnascimento = mysqli_real_escape_string($conexao, $_POST['dtnascimento']);
 $telefone = mysqli_real_escape_string($conexao, $_POST['telefone']);
 $permissao = mysqli_real_escape_string($conexao, $_POST['permissao']);
@@ -30,7 +30,7 @@ if ($senha != $senha_confirma){
 }else{
 
 
-echo $sql = "UPDATE usuarios SET nome='$nome', email='$email', senha='$senha', senha_confirma='$senha_confirma', rg='$rg', telefone='$telefone', dt_nascimento='$dtnascimento', Modificado=NOW(), habilitado='$habilitado', usuid='$usuid', idpermissao='$permissao' WHERE id='$id' ";
+echo $sql = "UPDATE usuarios SET nome='$nome', email='$email', senha='$senha', senha_confirma='$senha_confirma', cpf='$cpf', telefone='$telefone', dt_nascimento='$dtnascimento', Modificado=NOW(), habilitado='$habilitado', usuid='$usuid', idpermissao='$permissao' WHERE id='$id' ";
 
 if($conexao->query($sql) === TRUE){
 	$_SESSION['alterar_usuarios_sucesso'] = "Usuário alterado com Sucesso!";

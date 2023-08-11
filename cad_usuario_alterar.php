@@ -193,9 +193,9 @@ $row_usuario = mysqli_fetch_array($rsusu);
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-lg-3 control-label text-lg-right pt-2">RG</label>
+                                        <label class="col-lg-3 control-label text-lg-right pt-2">cpf</label>
                                         <div class="col-lg-6">
-                                            <input type="text" name="rg" class="form-control" value="<?php echo $row_usuario['rg'] ?>" readonly required maxlength="20">
+                                            <input type="text" name="cpf" class="form-control" value="<?php echo $row_usuario['cpf'] ?>" readonly required maxlength="20">
                                         </div>
                                     </div>
 
@@ -346,7 +346,7 @@ $row_usuario = mysqli_fetch_array($rsusu);
         (function(i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
+                (i[r].q = i[r].q || []).push(acpfuments)
             }, i[r].l = 1 * new Date();
             a = s.createElement(o), m = s.getElementsByTagName(o)[0];
             a.async = 1;

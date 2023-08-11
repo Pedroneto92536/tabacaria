@@ -4,7 +4,11 @@ session_start();
 include("Connections/conexao.php");
 
 $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
+
 $rg = mysqli_real_escape_string($conexao, trim($_POST['cpf']));
+
+$cpf = mysqli_real_escape_string($conexao, trim($_POST['cpf']));
+
 $dtnascimento = mysqli_real_escape_string($conexao, $_POST['dtnascimento']);
 $telefone = mysqli_real_escape_string($conexao, $_POST['telefone']);
 
