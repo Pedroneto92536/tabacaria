@@ -143,10 +143,6 @@ session_start();
 
                                     <div class="form-group row">
                                         <label class="col-lg-3 control-label text-lg-right pt-2">CPF</label>
-
-                                        <div class="col-lg-5">
-                                            <input type="text" name="cpf" inputmode="numeric" autocomplete="off" class="form-control" required>
-
                                         <div class="col-lg-6">
                                             <div class="input-group">
                                                 <span class="input-group-prepend">
@@ -154,10 +150,8 @@ session_start();
                                                         <i class="fas fad fa-wallet" style="--fa-primary-color: #000000; --fa-secondary-color: #000000;"></i>
                                                     </span>
                                                 </span>
-                                            
                                                 <input type="text" name="cpf" inputmode="numeric" autocomplete="off" class="form-control" required>
                                             </div>
-
                                         </div>
                                     </div>
 
@@ -174,6 +168,19 @@ session_start();
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group row">
+    <label class="col-lg-3 control-label text-lg-right pt-2">Número da Comanda</label>
+    <div class="col-lg-6">
+        <div class="input-group">
+            <span class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fas fa-key"></i>
+                </span>
+            </span>
+            <input type="text" name="comanda" id="comanda" class="form-control" required>
+        </div>
+    </div>
+</div>
 
                                     <div class="form-group row">
                                         <label class="col-lg-3 control-label text-lg-right pt-2">Telefone</label>

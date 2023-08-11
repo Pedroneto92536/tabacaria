@@ -15,6 +15,8 @@ session_start();
     <meta name="keywords" content="HTML5 Admin Template" />
     <meta name="description" content="Porto Admin - Responsive HTML5 Template">
     <meta name="author" content="okler.net">
+    <link rel="icon" href="img/favicon-16x16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon-16x16.png" type="image/x-icon">
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -59,8 +61,13 @@ session_start();
 
 
             <div class="panel card-sign">
+                
                 <div class="card-title-sign mt-3 text-right">
-                    <h2 class="title text-uppercase font-weight-bold m-0"><i class="fas fa-user mr-1"></i>OM Lounge.</h2>
+                    <h2 class="title text-uppercase font-weight-bold m-0">
+                    <img src="img/favicon-16x16.png" alt="Ícone" class="icon-img mr-1">
+                        <i class="fas fa-user mr-1"></i>
+
+                        OM Lounge.</h2>
                 </div>
                 <div class="card-body">
                     <?php

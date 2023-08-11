@@ -176,7 +176,7 @@ session_start();
                                         $result = mysqli_query($conexao, $sql);
                                         ?>
 
-                                        <div class="col-sm-1">
+                                        <div class="col-sm-2">
                                             <div class="form-group">
                                                 <label class="control-label  text-weight-bold">Comanda</label>
                                                 <select type="text" name="comanda" id="comanda" class="form-control">
@@ -188,9 +188,9 @@ session_start();
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
-                                            <label class="control-label  text-weight-bold">RG</label>
+                                            <label class="control-label  text-weight-bold">CPF</label>
                                             <div class="input-group">
-                                                <input type="text" name="rg" id="rg" inputmode="numeric" onfocusout="myFunction()" class="form-control" autofocus autocomplete="off" required>
+                                                <input type="text" name="cpf" id="cpf" inputmode="numeric" onfocusout="myFunction()" class="form-control" autofocus autocomplete="off" required>
                                                 <span class="input-group-prepend">
                                                     <span class="input-group-text">
                                                         <a href="#" type="button" id="botao" onClick="ativa()"><i class="fas fa-user-plus"></i></a>
@@ -258,9 +258,9 @@ session_start();
                                         </div>
 
                                         <div class="form-group row">
-                                            <label class="col-lg-3 control-label text-lg-right pt-2">RG</label>
-                                            <div class="col-lg-6">
-                                                <input type="text" name="rg" inputmode="numeric" autocomplete="off" class="form-control" maxlength="20" required>
+                                            <label class="col-lg-3 control-label text-lg-right pt-2">CPF</label>
+                                            <div class="col-lg-11">
+                                                <input type="text" name="cpf" inputmode="numeric" autocomplete="off" class="form-control" maxlength="20" required>
                                             </div>
                                         </div>
 
@@ -389,7 +389,7 @@ session_start();
 
     <script type='text/javascript'>
         $(document).ready(function() {
-            $("input[name='rg']").blur(function() {
+            $("input[name='cpf']").blur(function() {
                 var $nome_cli = $("input[name='nome_cli']");
                 var $reg = $("input[name='reg']");
                 $.getJSON('pega_cli.php', {
@@ -403,12 +403,12 @@ session_start();
     </script>
 
     <script type="text/javascript">
-        function buscarRg(rg) {
+        function buscarRg(cpf) {
             $.ajax({
                 url: "pesquisa_cliente.php",
                 method: "POST",
                 data: {
-                    rg: rg
+                    cpf: cpf
                 },
                 success: function(data) {
                     $('#resultado').html(data);
@@ -419,10 +419,10 @@ session_start();
 
         $(document).ready(function() {
             buscarRg();
-            $('#rg').keyup(function() {
-                var rg = $(this).val();
-                if (rg != '') {
-                    buscarRg(rg);
+            $('#cpf').keyup(function() {
+                var cpf = $(this).val();
+                if (cpf != '') {
+                    buscarRg(cpf);
                 } else {
                     buscarRg();
                 }
@@ -447,14 +447,14 @@ session_start();
 
     <script>
         $(document).ready(function() {
-            $('#rg').keyup(function() {
-                var rg = $(this).val();
-                if (rg != '') {
+            $('#cpf').keyup(function() {
+                var cpf = $(this).val();
+                if (cpf != '') {
                     $.ajax({
                         url: "complete.php",
                         method: "POST",
                         data: {
-                            rg: rg
+                            cpf: cpf
                         },
                         success: function(data) {
                             $('#countryList').fadeIn();
@@ -464,9 +464,9 @@ session_start();
                 }
             });
             $(document).on('click', 'li', function() {
-                $('#rg').val($(this).text());
+                $('#cpf').val($(this).text());
                 $('#countryList').fadeOut();
-                $('#rg').focus();
+                $('#cpf').focus();
             });
         });
     </script>

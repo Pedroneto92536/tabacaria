@@ -163,7 +163,7 @@ html .background-color-light {
         .header.header-nav-menu .header-nav-main nav > ul > li.open > a.dropdown-toggle:after,
         .header.header-nav-menu .header-nav-main nav > ul > li:hover > a.dropdown-toggle:after,
         .header.header-nav-menu .header-nav-main nav > ul > li.active > a.dropdown-toggle:after {
-            border-color: #ffffff transparent transparent transparent;
+            border-color: #a7a5a5 transparent transparent transparent;
         }
 
     .header.header-nav-menu .header-nav-main nav > ul > li.dropdown .dropdown-menu {
