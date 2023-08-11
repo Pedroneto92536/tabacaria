@@ -259,7 +259,7 @@ session_start();
 
                                         <div class="form-group row">
                                             <label class="col-lg-3 control-label text-lg-right pt-2">CPF</label>
-                                            <div class="col-lg-11">
+                                            <div class="col-lg-6">
                                                 <input type="text" name="cpf" inputmode="numeric" autocomplete="off" class="form-control" maxlength="20" required>
                                             </div>
                                         </div>
@@ -393,7 +393,7 @@ session_start();
                 var $nome_cli = $("input[name='nome_cli']");
                 var $reg = $("input[name='reg']");
                 $.getJSON('pega_cli.php', {
-                    rg: $(this).val()
+                    cpf: $(this).val()
                 }, function(json) {
                     $nome_cli.val(json.nome_cli);
                     $reg.val(json.reg);
@@ -403,7 +403,7 @@ session_start();
     </script>
 
     <script type="text/javascript">
-        function buscarRg(cpf) {
+        function buscarcpf(cpf) {
             $.ajax({
                 url: "pesquisa_cliente.php",
                 method: "POST",
@@ -418,13 +418,13 @@ session_start();
 
 
         $(document).ready(function() {
-            buscarRg();
+            buscarcpf();
             $('#cpf').keyup(function() {
                 var cpf = $(this).val();
                 if (cpf != '') {
-                    buscarRg(cpf);
+                    buscarcpf(cpf);
                 } else {
-                    buscarRg();
+                    buscarcpf();
                 }
             });
         });
