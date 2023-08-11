@@ -267,12 +267,12 @@ include("Connections/conexao.php");
 
         $(document).ready(function() {
             buscarRg();
-            $('#buscarrg').keyup(function() {
+            $('#buscarcpf').keyup(function() {
                 var cpf = $(this).val();
                 if (cpf != '') {
-                    buscarRg(cpf);
+                    buscarcpf(cpf);
                 } else {
-                    buscarRg();
+                    buscarcpf();
                 }
             });
         });

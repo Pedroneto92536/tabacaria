@@ -135,7 +135,9 @@ if ($_SESSION['logado'] == md5('@wew67434$%#@@947@@#$@@!#54798#11a23@@dsa@!')) {
                                                 <div class="widget-summary">
                                                     <div class="widget-summary-col widget-summary-col-icon">
                                                         <div class="summary-icon bg-quaternary">
+                                                        <a href="consulta_cliente.php">
                                                             <i class="fas fa-user"></i>
+                                                        </a>
                                                         </div>
                                                     </div>
                                                     <div class="widget-summary-col">
@@ -147,6 +149,7 @@ if ($_SESSION['logado'] == md5('@wew67434$%#@@947@@#$@@!#54798#11a23@@dsa@!')) {
                                                             $rstotclimes = $result['total'];
                                                             ?>
                                                             <h4 class="title">Cadastros no Mês</h4>
+                                                            
                                                             <div class="info">
                                                                 <strong class="amount"><?php echo $rstotclimes ?></strong>
                                                             </div><br>
