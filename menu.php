@@ -128,24 +128,9 @@ include("valida.php");
                                 <!-- adicionar mais -->
                             </ul>
                         </li>
-                    <<!-- <?php } ?>
-                    <li class="nav-parent nav-expanded">
-                        <a href="#">
-                            <i class="fas fa-dollar-sign"></i>
-                            <span>Útil</span>
-                        </a>
-                        <ul class="nav nav-children">
-                            <li>
-                                <a href="download/VisionPremium.apk" download>
-                                    <i class="fas fa-hand-holding-usd"></i>
-                                    Download Aplicativo
-                                </a>
-                            </li>
-                           
-                        </ul>
-                    </li>
-                </ul>
-            </nav> --> 
+                     <?php } ?>
+                
+            </nav> 
 
             <hr class="separator" />
 
